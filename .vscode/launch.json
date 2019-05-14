@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - piece",
+            "request": "launch",
+            "mainClass": "piece",
+            "projectName": "Java-Bitboard-Chess_69f8397f"
+        }
+    ]
+}
