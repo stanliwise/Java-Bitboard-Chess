@@ -1,4 +1,6 @@
-abstract public class Piece{
+package piece;
+
+public abstract class Piece {
     
     //The piece type
     public String type;
@@ -13,7 +15,7 @@ abstract public class Piece{
     public boolean state;
 
     //constructor
-    public  Piece(long start_position){
+    public Piece(long start_position){
         this.position = start_position;
     }
 
