@@ -1,41 +1,41 @@
 package piece;
 
 public abstract class Piece {
+
+    public final static int ALIVE = 1;
+    public final static int DEAD = 0;
     
     //The piece type
-    public String type;
+    public String name;
+
+    //color of string
+    public int color;
 
     //piece name shortcode
-    public String type_shortname;
+    public String shortname;
 
     //current position
     public long position;
 
     //if piece is still alive of not
-    public boolean state;
+    public int state;
 
     //constructor
-    public Piece(long start_position){
-        this.position = start_position;
+    public Piece(long start_position, int color){
+        //if(this.position > 0 ||)
+        this.position = (long)start_position;
+        this.color = color;
+        this.state = Piece.ALIVE;
     }
 
     //move piece
-    abstract boolean move(long from, long to);
+    public void move(long to){
+        if((to > 0) || (to < 64))
+            this.position = to;
+    }
 
     /**
      * return move mask of piece from current position
      */
-    abstract long move_mask();
-
-    /**
-     * return capture mask of piece from current position
-     */
-    abstract long capture_mask();
-
-    /**
-     * check if a move is valid
-     * 
-     * @return true|false
-     */
-    abstract boolean isValid();
+    abstract public long move_mask();
 }

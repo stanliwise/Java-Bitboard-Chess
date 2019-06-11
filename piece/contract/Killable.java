@@ -6,5 +6,11 @@ package piece.contract;
 
 public interface Killable {
     //remove a piece from the board
-    public boolean die();
+    public void die();
+
+    //place piece back on the board;
+    public void resurrect();
+
+    //check if the piece is dead
+    public boolean isDead();
 }

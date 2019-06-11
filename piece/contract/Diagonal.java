@@ -4,6 +4,6 @@
  */
  package piece.contract;
  
- interface Diagonal extends Sliding{
+ public interface Diagonal extends Sliding{
      
  }

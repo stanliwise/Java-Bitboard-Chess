@@ -1,9 +1,9 @@
 package piece;
 import piece.contract.*;
 
-public class Bishop extends Piece implements Killable, Diagonal {
+public class Rook extends Piece implements Killable {
 
-    public Bishop(long start_position, int color){
+    public Rook(long start_position, int color){
         super(start_position, color);
     }
 
@@ -11,8 +11,7 @@ public class Bishop extends Piece implements Killable, Diagonal {
 	public long move_mask() {
 		return 0;
 	}
-
-	    /**
+    /**
      * kill the piece
      * 
      * @return void
@@ -36,5 +35,4 @@ public class Bishop extends Piece implements Killable, Diagonal {
 
         return true;
     }
-
 }
