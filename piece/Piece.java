@@ -2,36 +2,19 @@ package piece;
 
 public abstract class Piece {
 
-    public final static int ALIVE = 1;
-    public final static int DEAD = 0;
-    
-    //The piece type
-    public String name;
+    public static final int KING = 1;
+    public static final int QUEEN = 2;
+    public static final int ROOK = 3;
+    public static final int BISHOP = 4;
+    public static final int KNIGHT = 5;
+    public static final int PAWN = 6;
 
-    //color of string
-    public int color;
+    public int type;
+    public int position;
 
-    //piece name shortcode
-    public String shortname;
-
-    //current position
-    public long position;
-
-    //if piece is still alive of not
-    public int state;
-
-    //constructor
-    public Piece(long start_position, int color){
-        //if(this.position > 0 ||)
-        this.position = (long)start_position;
-        this.color = color;
-        this.state = Piece.ALIVE;
-    }
-
-    //move piece
-    public void move(long to){
-        if((to > 0) || (to < 64))
-            this.position = to;
+    public Piece(int type, int position){
+        this.type = type;
+        this.position = position;
     }
 
     /**

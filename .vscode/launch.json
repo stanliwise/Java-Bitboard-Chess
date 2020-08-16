@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - chessBoard",
+            "request": "launch",
+            "mainClass": "chessModel.chessBoard",
+            "projectName": "Java-Bitboard-Chess_69f8397f"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - chess",
             "request": "launch",
             "mainClass": "chess",

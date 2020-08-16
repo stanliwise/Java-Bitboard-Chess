@@ -1,40 +1,18 @@
 package piece;
-import piece.contract.*;
 
-public class Bishop extends Piece implements Killable, Diagonal {
+public class Bishop extends Piece {
 
-    public Bishop(long start_position, int color){
-        super(start_position, color);
+
+    public Bishop(int type, int position) {
+        super(type, position);
+        // TODO Auto-generated constructor stub
     }
 
-	@Override
-	public long move_mask() {
-		return 0;
-	}
-
-	    /**
-     * kill the piece
-     * 
-     * @return void
-     */
-    public void die(){
-        this.state = Piece.DEAD; 
+    @Override
+    public long move_mask() {
+        // TODO Auto-generated method stub
+        return 0;
     }
 
-    /**
-     * revive the piece
-     * 
-     * @return void
-     */
-    public void resurrect(){
-        this.state = Piece.ALIVE;
-    }
-
-    public boolean isDead(){
-        if(this.state == Piece.ALIVE)
-            return false;
-
-        return true;
-    }
 
 }

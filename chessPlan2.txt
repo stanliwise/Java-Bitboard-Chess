@@ -1,0 +1,83 @@
+Move
+======
+form 
+to
+pieces_type
+isMovePossible(); //use move mask
+
+piece_bag
+=========
+white_rack
+black_rack
+get(piece_type, color);
+put(piece);
+
+Board (inside chessboard)
+==========================
+    map;
+    death_bag;
+    en_passant //the map value of the piece
+    turn;
+    piece_map;
+
+    init();
+    isCheck();
+    getPiece(int position);
+    piece_type(int position)
+    isCheckMate();
+    isStalemate();
+    remove(); //remove a piece from board
+    reset();
+    whosTurn();
+    whiteBitMask();
+    BlackBitMask();
+    can_castle(castle_type);
+    move(move_object);
+
+piece constant interface
+========================
+
+board constant interface
+========================
+    
+pieces
+=======
+type of piece
+position
+validate(to, Board) 
+getType(); //return constant
+    for pawn enpassant & move twice
+    for rook and king, if castle candidate
+    move(piece_name, from, to);
+piece::bit_mask()
+
+
+Java model
+===========
+    board_model
+    game_state
+    White_player
+    black_player
+
+controller
+==========
+
+view
+=====
+
+Engine
+=======
+Constructor(board)
+Min_max();
+get_move();
+
+Later features
+==============
+FEN -> playerable functionality
+Logger and Undo() functionality
+setPosition from logger();
+set a rack to cache bit for white and black();
+Make engine interface();
+Let all class use a particular chess constant and use the constant reference in other classes
+Rerrange all the functions later on
+synchronize map of pieces and pieces position

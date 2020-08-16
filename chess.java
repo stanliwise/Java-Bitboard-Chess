@@ -1,13 +1,14 @@
-import piece.*;
 public class chess {
     public static void main(String[] args) {
+        //chessBoard model = new chessBoard();
         //Knight knight= new Knight(62, 1);
         //System.out.println(knight.move_mask());
-
-        King king = new King(9, 1);
-        System.out.println(king.move_mask());
     }
 
+    /***
+     * This is just a dump test of knightBit move logic
+     * @return
+     */
     public static long[] generateKnightMoves(){
         long[] moves = new long[64];
         long first_two_columns = 0xFCFCFCFC_FCFCFCFCL;
