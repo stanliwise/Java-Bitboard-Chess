@@ -2,14 +2,17 @@ package piece;
 
 public class Queen extends Piece {
 
-    public Queen(int type, int position) {
-        super(type, position);
-        // TODO Auto-generated constructor stub
+    public Queen(int color, int position) {
+        super(color, position);
     }
 
     @Override
     public long move_mask() {
-        // TODO Auto-generated method stub
         return 0;
+    }
+
+    @Override
+    public int get_type() {
+        return QUEEN;
     }
 }

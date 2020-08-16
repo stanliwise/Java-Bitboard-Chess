@@ -17,6 +17,15 @@ public class chessBoard {
      * Initialize our variables
      */
     public chessBoard(){
+        //initalize gameboard
+        init();
+    }
+
+    /**
+     * This function is very needed because it would be called often to restarted the game
+     */
+    protected void init(){
+        //set all variables
         deathBag = new DeathBag();
         en_passant = false;
         whose_turn = WHITE;
@@ -24,10 +33,39 @@ public class chessBoard {
 
         //add white pawns
         for (int i = 8; i < 16; i++) {
-            piece_map[i] = new Pawn(i + 1, WHITE);
+            piece_map[i] = new Pawn(WHITE, (i + 1));
         }
 
-        //looop and add white pieces
+        //add black pawn
+        for(int j = 56; j > 48; j-- ){
+            piece_map[j] = new Pawn(BLACK, (j + 1));
+        }
+
+        //setup Rooks
+        piece_map[63] = new Rook(BLACK, 64);
+        piece_map[56] = new Rook(BLACK, 57);
+        piece_map[7] = new Rook(WHITE, 8);
+        piece_map[0] = new Rook(WHITE, 1);
+
+        //setup Knight
+        piece_map[62] = new Knight(BLACK, 63);
+        piece_map[57] = new Knight(BLACK, 58);
+        piece_map[6] = new Knight(WHITE, 7);
+        piece_map[1] = new Knight(WHITE, 2);
+
+        //setup Bishop
+        piece_map[61] = new Bishop(BLACK, 62);
+        piece_map[58] = new Bishop(BLACK, 59);
+        piece_map[5] = new Bishop(WHITE, 6);
+        piece_map[2] = new Bishop(WHITE, 3);
+
+        //setup Queen
+        piece_map[60] = new Queen(BLACK, 61);
+        piece_map[4] = new Queen(WHITE, 5);
+
+        //setup King
+        piece_map[59] = new King(BLACK, 60);
+        piece_map[3] = new King(WHITE, 4);
     }
 
     /**
@@ -54,6 +92,14 @@ public class chessBoard {
         return false;
     }
 
+    /***
+     * Switch turn to the next player
+     * @return
+     */
+    protected void switch_turn(){
+        whose_turn = (whose_turn == WHITE) ? BLACK : WHITE;
+    }
+
     /**
      * This helps to check if a king and rook and castle of either white or black
      */
@@ -72,7 +118,7 @@ public class chessBoard {
      * Find the type of piece at a position, return null if no piece
      */
     public Piece get_piece(int position){
-        return null;
+        return piece_map[position];
     }
 
     /**
@@ -81,23 +127,22 @@ public class chessBoard {
      * @param position
      * @return
      */
-    protected void remove(Piece piece){
-        //add to deathBa
-        //check it contains in array and remove
+    protected void remove(int position){
+        piece_map[position] = null;
     }
 
     /**
      * This help to check for the type of piece at a given position
      */
     public int get_piece_type(int position){
-        return 0;
+        return (piece_map[position]).get_type();
     }
 
     /**
      * Reset the chess games to start a new game
      */
     public void reset(){
-
+        init();
     }
 
     /**
@@ -124,8 +169,11 @@ public class chessBoard {
 
     /**
      * This helps to make a move
+     * @return This is true if the move was successful else false;
      */
-    public void make_move(Move move){
-
+    public boolean make_move(Move move){
+        //Where the main logic happens
+        //move to a new square 
+        return false;
     }
 }

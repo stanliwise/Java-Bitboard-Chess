@@ -2,7 +2,12 @@ public class chess {
     public static void main(String[] args) {
         //chessBoard model = new chessBoard();
         //Knight knight= new Knight(62, 1);
-        //System.out.println(knight.move_mask());
+        //System.out.println(knight.move_mask())
+        for (int i = 64; i > 0; i--) {
+            System.out.print(i + " ");
+            if(i % 8 == 0)
+                System.out.println();
+        }
     }
 
     /***

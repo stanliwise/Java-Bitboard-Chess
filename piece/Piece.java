@@ -9,13 +9,27 @@ public abstract class Piece {
     public static final int KNIGHT = 5;
     public static final int PAWN = 6;
 
-    public int type;
     public int position;
+    protected int color;
 
-    public Piece(int type, int position){
-        this.type = type;
+    public Piece(int color, int position){
+        this.position = position;
+        this.color = color;
+    }
+
+    public void change_position(int position){
         this.position = position;
     }
+
+    public int get_position(){
+        return position;
+    }
+
+    /**
+     * This type of piece
+     * @return
+     */
+    abstract public int get_type();
 
     /**
      * return move mask of piece from current position

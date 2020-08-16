@@ -9,11 +9,11 @@ public class DeathBag {
     ArrayList<Piece> White_rack;
     ArrayList<Piece> black_rack;
 
-    public void insert(Piece piece, int color){
+    public void insert(Piece piece){
 
     }
 
-    public void get(int value, int color){
+    public void get(int value, int color_rack){
 
     }
 }
