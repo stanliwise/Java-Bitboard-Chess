@@ -1,8 +1,0 @@
-
-
--chessboard
-ischeck
-
-
--utilities
-Moves gen
