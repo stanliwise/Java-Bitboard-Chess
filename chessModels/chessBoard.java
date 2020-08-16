@@ -22,9 +22,9 @@ public class chessBoard {
         whose_turn = WHITE;
         piece_map = new Piece[64];
 
-        //loop and add white pieces
-        for (int i = 0; i < 16; i++) {
-            
+        //add white pawns
+        for (int i = 8; i < 16; i++) {
+            piece_map[i] = new Pawn(i + 1, WHITE);
         }
 
         //looop and add white pieces
